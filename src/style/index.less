@@ -1,4 +1,80 @@
-body{
-    background-color: #bfa;
+//设置变量
+@bg-color: #b7d4a8;
+
+// 清楚默认样式
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: bold 20px "Courier";
+}
+
+#main {
+  display: flex;
+  //设置主轴方向
+  flex-flow: column;
+  // 侧轴对齐方式
+  align-items: center;
+  //垂直方向
+  justify-content: space-around;
+
+  width: 360px;
+  height: 420px;
+  background-color: @bg-color;
+  margin: 100px auto;
+  border: 10px solid black;
+  border-radius: 10px;
+}
+
+//舞台
+#stage {
+  position: relative;
+  width: 304px;
+  height: 304px;
+  border: 2px solid black;
+
+  // 设置蛇的样式
+  #snake {
+    & > div {
+      position: absolute;
+
+      width: 10px;
+      height: 10px;
+      background-color: black;
+      border: 1px solid @bg-color;
+    }
+  }
+
+  #food {
+    & > div {
+      width: 4px;
+      height: 4px;
+      background-color: black;
+      transform: rotate(45deg);
+    }
+
     display: flex;
+    //设置主轴为横轴，超过换行
+    flex-flow: row wrap;
+    // 设置主轴和侧轴空白空间分配到元素之间
+    justify-content: space-between;
+    align-content: space-around;
+
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+// 积分牌
+#score-panel {
+  width: 304px;
+  display: flex;
+  //设置主轴对齐方式
+  justify-content: space-between;
 }

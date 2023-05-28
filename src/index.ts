@@ -1,2 +1,5 @@
+// 引入less
 import "./style/index.less"
-console.log("hello world");
+import GameControl from "./moudle/gameControl";
+
+const food = new GameControl()
